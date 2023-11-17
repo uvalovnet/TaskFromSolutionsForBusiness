@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "";
+}
+
+<p>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#CreateExpande" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Создать ордер
+            </a>
+        </div>
+    </div>
+</p>
+<div class="collapse" id="CreateExpande">
+    <div class="" id="Order">
+        <div class="shadow p-3 mb-5 bg-light rounded" id="creatingForm">
+            <div class="row">
+                <div class="col-sm-1">
+                    <select class="custom-select" id="providers1" placeholder="Provider">
+
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-lg" type="text" id="orderNumberCreate" placeholder="Number" value="">
+                </div>
+                <div class="col-sm-1">
+                    <button id="addItemCreate" class="btn btn-primary">Добавить OrderItem</button>
+                </div>
+                <div class="col-sm-1">
+                    <button id="Create" class="btn btn-primary">Создать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#ExpandFilter" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Фильтр
+            </a>
+        </div>
+    </div>
+</p>
+<div class="collapse" id="ExpandFilter">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <div class="row">
+            <div class="col-sm-1">
+                <select class="custom-select" id="providers2" placeholder="Provider">
+
+                </select>
+            </div>
+            <div class="col-sm-2">            
+                <div class="form-group">
+                    <input type="datetime-local" class="form-control" id="startDateFilter" placeholder="С" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="datetime-local" class="form-control" id="endDateFilter" placeholder="По" value="" />
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="text" id="orderNumberFilter" placeholder="Order Number" value="">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="text" id="orderItemNameFilter" placeholder="Order Item Name" value="">
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control form-control-lg" type="text" id="orderItemUnitFilter" placeholder="Order Item Unit" value="">
+            </div>
+            <div class="col-sm-1">
+                <button id="getSelectionData" class="btn btn-primary">Применить фильтр</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="EditorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Редактирование</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="OrderEditor">
+                    <div class="shadow p-3 mb-5 bg-light rounded" id="updatingForm">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <h2 id = "orderIdUpdate">ID</h2>
+                            </div>
+                            <div class="col-sm-1">
+                                <select class="custom-select" id="providers3" placeholder="Provider">
+                                </select>
+                            </div>
+                            <div class="col-sm-1">
+                            </div>
+                            <div class="col-sm-3">
+                                <input class="form-control form-control-lg" type="text" id="orderNumberUpdate" placeholder="Number" value="">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="datetime-local" class="form-control" id="orderDateUpdate" placeholder="Date" value="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <button id="addUpdateItem" class="btn btn-primary">Добавить OrderItem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" id="saveUpdateChanges" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <table class="table table-bordered" id="viewTable">
+
+        </table>
+    </div>
+</div>
+
+
+
